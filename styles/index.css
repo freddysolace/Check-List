@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* reset */
+  body,p,a,ul,li {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+  
+  /* base styles */
+  body {
+    background-color: #e8f4f8;
+    overflow-x: hidden;
+    font-family: "Rubik Regular";
+  }
+
+  input,textarea {
+    background-color: #91a3b0;
+    padding: 10px 16px;
+    border-radius: 20px;
+    border: 2px solid black;
+    color: white;
+  }
+
+  /* fonts */
+  @font-face {
+    font-family: "Rubik Regular";
+    src: url(file:///C:/Users/ENIADOM/Desktop/Check%20list/assets/fonts/Rubik-VariableFont_wght.ttf);
+  }
+
+  /* stting colors for headings,paragraphs etc*/
+  h1,h2,h3,h4 {
+    color: #4490c6;
+    font-weight: normal;
+  }
+
+  p,a,li {
+    color: black;
+  }
+
+  /* setting sizes for headings and paragraphs*/
+  h1,h3{
+    font-size: 1.2em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  h4 {
+    font-size: 1.1em;
+  }
+
+  /* mobile styles*/
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+  }
+
+  .site-nav {
+    margin: 0 10px;
+  } 
+
+  .site-nav ul {
+    display: none;
+  }
+
+  .site-nav img {
+    max-width: 200px;
+    margin-bottom: 0;
+    grid-column: 1/8;
+    grid-row: 1;
+    border-bottom: 3px solid #436FA6 ;
+    /*box shadow on only one side*/
+    -webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
+  }
+
+  #welcome {
+    padding: 0 20px 20px 20px;
+    margin: 20px;
+  }
+
+  .welcome-pic {
+    grid-column: 6/9;
+    grid-row: 1;
+  }
+
+  .welcome-pic img {
+    width: 200%;
+  }
+
+  .welcome-text {
+    font-family: 'Fredoka One', cursive;
+    font-weight: bold;
+    font-size: 2em;
+    color: #436FA6;
+    grid-column: 1/6;
+    grid-row: 1;
+  }
+
+  .button {
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    background-color: #e6bbad;
+    color: white;
+    width: 120px;
+    height: 30px;
+  }
+
+  
+  
+  #about {
+    margin: 0;
+    background-color: #d4ebf2;
+    padding: 30px 20px;
+    overflow-x: hidden;
+  }
+
+  #about p {
+    text-align: center;
+    font-weight: bold;
+    color: #436FA6;
+  }
+
+  .features div img {
+    width: 100%;
+  }
+
+  .features div{
+    grid-column: 1/9;
+    margin: 20px 0;
+    background-color: #8fcadd;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+
+  .features div:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  #contact {
+    padding: 30px 20px;
+    background-color: #99badd;
+  }
+
+  #contact h3 {
+    text-align: center;
+  }
+
+  #contact form {
+    width: 80%;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  #contact input, #contact textarea {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  footer {
+    padding: 30px 20px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #2C3539;
+  }
+
+
+  /* small tablet styles*/
+  @media screen and (min-width: 620px){
+  
+  }
+  
+  /* large tablets and laptops styles*/
+  @media screen and (min-width: 960px) {
+    body {
+      font-size: 18px;
+    }
+    
+  }
+  
+  /* desktop  styles*/
+  @media screen and (min-width: 1200px){
+    body {
+      font-size: 20px;
+    }
+  
+  }
+  
