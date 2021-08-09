@@ -1,7 +1,7 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   }
 
   /* reset */
@@ -86,6 +86,7 @@
   }
 
   #welcome {
+    overflow-x: hidden;
     padding: 0 20px 20px 20px;
     margin: 20px;
   }
@@ -118,11 +119,8 @@
     width: 120px;
     height: 30px;
   }
-
-  
   
   #about {
-    margin: 0;
     background-color: #d4ebf2;
     padding: 30px 20px;
     overflow-x: hidden;
@@ -182,7 +180,54 @@
 
   /* small tablet styles*/
   @media screen and (min-width: 620px){
-  
+    .welcome-text {
+      font-family: 'Fredoka One', cursive;
+      font-weight: bold;
+      font-size: 3em;
+      color: #436FA6;
+      grid-column: 1/6;
+      grid-row: 1;
+    }
+
+    .welcome-pic img {
+      width: 100%;
+    }
+
+    #about {
+      padding: 50px 30px;
+    }
+
+    .features{
+      margin-top: 40px;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .about-text {
+      margin-top: 30px;
+    }
+
+    .features div {
+      grid-column: span 4; /*This means automatically places the cards in the grid across 4*/
+      margin: 20px 0;
+    }
+
+    .features div img {
+      padding: 10px;
+    }
+
+    .features div p {
+      padding: 0 10px;
+    }
+
+    .features div:last-child {
+      grid-column: 3/7;
+    }
+
+    .features div *{
+      max-width: 60%;
+      margin: 10px 20%;
+    }
   }
   
   /* large tablets and laptops styles*/
