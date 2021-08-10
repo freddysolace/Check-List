@@ -73,6 +73,10 @@
     display: none;
   }
 
+  .nav-button {
+    display: none;
+  }
+
   .site-nav img {
     max-width: 200px;
     margin-bottom: 0;
@@ -217,7 +221,7 @@
     }
 
     .features div p {
-      padding: 0 10px;
+      padding: 0 20px;
     }
 
     .features div:last-child {
@@ -225,8 +229,7 @@
     }
 
     .features div *{
-      max-width: 60%;
-      margin: 10px 20%;
+      max-width: 100%;
     }
   }
   
@@ -235,13 +238,75 @@
     body {
       font-size: 18px;
     }
+
+    .grid {
+      /*this is to make the grid sit in the middle and not occupy only a portion of the page*/
+      width: 100%;
+      max-width: 1060px;
+      box-sizing: border-box;
+    }
+
+    .welcome-text {
+      font-size: 3.5em;
+      margin: 20px 0;
+    }
+
+    .site-nav {
+      padding: 0 20px;
+    }
+
+    #about {
+      padding: 60px;
+    }
+
+    .site-nav ul {
+      display: flex;
+      grid-column: 6/7;
+      justify-content: flex-end;
+      align-self: center;
+    }
+
+    .nav-button {
+      display: flex;
+      grid-column: 8/9;
+      align-self: center;
+    }
     
+    .site-nav li {
+      margin-left: 20px;
+    }
+
+    .features div:nth-child(1) {
+      grid-column: 2/4;
+    }
+
+    .features div:nth-child(2) {
+      grid-column: 4/6;
+    }
+
+    .features div:nth-child(3) {
+      grid-column: 6/8;
+    }
+
+    .features div img {
+      width: 100%;
+      padding: 0;
+    }
+
+    .features div p {
+      padding: 10px;
+    }
+
+    .features div *{
+      max-width: 100%;
+      margin: 0;
+    }
   }
   
   /* desktop  styles*/
   @media screen and (min-width: 1200px){
     body {
-      font-size: 20px;
+      font-size: 30px;
     }
   
   }
