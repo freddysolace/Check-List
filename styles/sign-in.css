@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+  
+    /* reset */
+    body,p,a,ul,li {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+    }
+    
+    li {
+      list-style-type: none;
+    }
+    
+    /* base styles */
+    body {
+      background-color: #e8f4f8;
+      overflow-x: hidden;
+      font-family: "Rubik Regular";
+    }
+
+/* fonts */
+@font-face {
+    font-family: "Rubik Regular";
+    src: url(file:///C:/Users/ENIADOM/Desktop/Check%20list/assets/fonts/Rubik-VariableFont_wght.ttf);
+  }
+
+  h1,h2,h3,h4 {
+    color: #4490c6;
+    font-weight: normal;
+  }
+
+  p,a,li {
+    color: black;
+  }
+
+  /* setting sizes for headings and paragraphs*/
+  h1,h3{
+    font-size: 1.2em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  h4 {
+    font-size: 1.1em;
+  }
+
+
+/*mobile styles*/
+
+/* Position in the middle*/
+.middle {
+    padding: 60px 40px;
+}
+
+/*grid style*/
+.sign-in-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.form-header {
+    grid-column: 1/5;
+    grid-row: 1;
+    background-color: #87CEEB;
+    width: 100%;
+}
+
+.form-header img {
+    width: 100%;
+    height: 150px;
+}
+
+.form-container {
+    grid-row: 2;
+    padding: 40px 30px;
+    grid-column: 1/5;
+    width: 100%;
+}
+
+#form-style {
+    grid-row: 4;
+    grid-column: 1/5;
+    width: 100%;
+    margin: 20px auto;
+}
+
+#form-style form input label {
+    width: 100%;
+    margin: 10px 0;
+}
+
+hr {
+    grid-row: 3;
+    grid-column: 1/5;
+    width: 100%;
+    color: gray;
+}
+
+#button-position {
+    display: inline;
+    flex-direction: row;
+}
+
+
+/* small tablet styles*/
+@media screen and (min-width: 620px){
+    body {
+        padding: 60px 40px;
+    }
+
+    .sign-in-grid {
+        
+    }
+}
+
+
+
+
+
+
+
+
+
