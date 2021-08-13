@@ -130,11 +130,12 @@ hr {
 /* small tablet styles*/
 @media screen and (min-width: 620px){
     body {
-        padding: 60px 40px;
+      padding: 30px 60px;
     }
 
-    .sign-in-grid {
-        
+    #container{
+      border-radius: 30px;
+      padding: 20px;
     }
 }
 
