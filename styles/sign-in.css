@@ -165,7 +165,6 @@ hr {
 
   .form-container {
     grid-row: 1;
-    padding: 40px 30px;
     grid-column: 3/5;
     width: 100%;
     padding: 50px;
@@ -185,10 +184,29 @@ hr {
 
   .form-style form {
     padding: 15px;
-  }
-  
-
+  } 
 }
+
+/* desktop styles*/
+@media screen and (min-width: 1200px){
+  body {
+      padding: 90px 60px;
+  }
+
+  hr {
+    grid-column: 3/5;
+  }
+
+  .form-container {
+    padding: 60px;
+  }
+
+  .form-style form{
+    padding: 0;
+  }
+}
+
+
 
 
 
