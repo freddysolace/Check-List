@@ -22,6 +22,14 @@
       font-family: "Rubik Regular";
     }
 
+    input,textarea {
+      background-color: #91a3b0;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 2px solid black;
+      color: white;
+    }
+
 /* fonts */
 @font-face {
     font-family: "Rubik Regular";
@@ -59,7 +67,7 @@
 }
 
 /*grid style*/
-.sign-in-grid {
+.grid {
     display: grid;
     grid-template-columns: repeat(4,1fr);
 }
@@ -77,35 +85,46 @@
 }
 
 .form-container {
-    grid-row: 2;
-    padding: 40px 30px;
-    grid-column: 1/5;
-    width: 100%;
+  grid-row: 2;
+  padding: 40px 30px;
+  grid-column: 1/5;
+  width: 100%;
 }
 
-#form-style {
-    grid-row: 4;
-    grid-column: 1/5;
-    width: 100%;
-    margin: 20px auto;
+.button {
+  width: 40%;
+  margin-top: 20px;
+  margin-right: 10px;  
 }
 
-#form-style form input label {
-    width: 100%;
-    margin: 10px 0;
+.button-position {
+  display: inline;
+}
+
+.form-style {
+  grid-row: 4;
+  grid-column: 1/5;
+  width: 100%;
+}
+
+.form-style form {
+  width: 80%;
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.form-style input {
+  width: 100%;
+  margin: 10px 0;
 }
 
 hr {
-    grid-row: 3;
-    grid-column: 1/5;
-    width: 100%;
-    color: gray;
+  grid-row: 3;
+  grid-column: 2/4;
+  width: 80%;
 }
 
-#button-position {
-    display: inline;
-    flex-direction: row;
-}
 
 
 /* small tablet styles*/
