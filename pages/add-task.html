@@ -5,16 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/user-dashboard.css">
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <title>User Dashboard</title>
+    <title>Add Task</title>
 </head>
 
 <body>
@@ -26,53 +22,33 @@
 
             <div>
                 <ul id="side-menu-ul">
-                    <li><a href="#"><span class="material-icons">home</span> Home</a></li>
-                    <li><a href="#"><span class="material-icons">person</span>Profile</a></li>
+                    <li><a href="../pages/user-dashboard.html"><span class="material-icons">home</span> Home</a></li>
+                    <li><a href="../pages/user-profile.html"><span class="material-icons">person</span>Profile</a></li>
                     <li><span class="material-icons">logout</span> Log out</li>
                 </ul>
             </div>
         </nav>
     </div>
 
+
     <div id="main-content">
         <div class="user-info" style="display: flex; justify-content: space-between;">
             <div>
-                <h2>Hey</h2>
-                <p>Here are the tasks to complete for today</p>
+                <h2>Add a task today!</h2>
+                <p>Let's get started by following the settings below</p>
             </div>
             <div>
                 <button class="add-task">
-                    <a href="../pages/add-task.html">Add task</a>
+                    Save task
                 </button>
             </div>
         </div>
 
-        <h3 class="leading-text">Upcoming tasks</h3>
-        <div class="grid grid-upcoming">
-            <div class="grid-child">123</div>
-            <div class="grid-child">123</div>
-            <div class="grid-child">123</div>
-            <div class="grid-child">123</div>
+        <div class="grid task-settings">
+            <div class="grid-child"></div>
+            <div class="grid-child"></div>
+            <div class="grid-child"></div>
         </div>
-
-        <h3 class="leading-text">Tasks in Progress</h3>
-        <div class="grid grid-in-progress">
-            <div class="grid-child">123</div>
-            <div class="grid-child">123</div>
-            <div class="grid-child">123</div>
-            <div class="grid-child">123</div>
-        </div>
-
-        <h3 class="leading-text">Completed tasks</h3>
-        <div class="grid grid-completed">
-            <div class="grid-child">123</div>
-            <div class="grid-child">123</div>
-            <div class="grid-child">123</div>
-            <div class="grid-child">123</div>
-        </div>
-
-    </div>
-
 
     </div>
 

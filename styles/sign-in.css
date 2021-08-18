@@ -91,6 +91,10 @@
   width: 100%;
 }
 
+.form-container a {
+  color: #436FA6;
+}
+
 .button {
   width: 40%;
   margin-top: 20px;
