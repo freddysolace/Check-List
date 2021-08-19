@@ -1,0 +1,25 @@
+{
+  "name": "check-list",
+  "version": "1.0.0",
+  "description": "A task management web application ",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benacq/Check-List.git"
+  },
+  "author": "Fredrica Arthur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benacq/Check-List/issues"
+  },
+  "homepage": "https://github.com/benacq/Check-List#readme"
+}
