@@ -36,10 +36,29 @@
     background-color: #e1e1e1;
 }
 
-.flex >form input:first-child {
+.flex >form > input:first-child {
     /* border: none; */
     background-color: white;
     border-bottom: 2px solid #e1e1e1;
     outline: none;
+}
 
+.flex-time {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-time input[type='time'] {
+    width: 48%;
+}
+
+.flex > form > input[type="submit"] {
+    border: none;
+    border-radius: 20px;
+    width: 120px;
+    height: 40px;
+    background-color: #1D1333;
+    color: white;
+    cursor: pointer;
+    margin: 30px auto;
 }
