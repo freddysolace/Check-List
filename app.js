@@ -1,13 +1,17 @@
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-
+const user = require('./api/models/user');
+const bodyParser = require('body-parser');
+const userRouter = require('./api/routes/user');
+const taskRouter = require('./api/routes/task');
+require('dotenv').config();
 
 //creating th express app
 const app = express();
 
 //connect to mongodb
-const dbURI = 'mongodb+srv://freddy:testone@checklist.mckxo.mongodb.net/Checklist?retryWrites=true&w=majority';
+const dbURI = process.env.DB_URL;
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
 .then((result) => app.listen(3000))
 .catch((err) => console.log(err));
@@ -19,26 +23,33 @@ app.set('view engine', 'ejs')
 
 
 //middleware and static files
+app.use(morgan('dev'));
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended:false }));
+
+
+// Route Middlewares
+app.use('/api/user',userRouter)
+    .use('/api/task',taskRouter);
 
 
 app.get('/',(req,res) => {
     res.render('index');
 });
 
-app.get('/log-in.ejs',(req,res) => {
+app.get('/login',(req,res) => {
     res.render('log-in');
 });
 
-app.get('/sign-up.ejs',(req,res) => {
+app.get('/sign-up',(req,res) => {
     res.render('sign-up');
 });
 
-app.get('/user-dashboard.ejs',(req,res) => {
+app.get('/user-dashboard',(req,res) => {
     res.render('user-dashboard');
 });
 
-app.get('/add-task.ejs',(req,res) => {
+app.get('/add-task',(req,res) => {
     res.render('add-task');
 });
 

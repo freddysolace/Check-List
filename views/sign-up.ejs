@@ -18,7 +18,7 @@
         </div>
         <div class="form-container">
             <h2>Get Started</h2>
-            <p>Already have an account? <a href="./log-in.ejs">Log in</a></p>
+            <p>Already have an account? <a href="./log-in">Log in</a></p>
             <div class="button-position">
                 <button class="button">Sign up with Google</button>
                 <button class="button">Sign up with Facebook</button>
@@ -26,14 +26,14 @@
         </div>
         <hr/>
         <div class="form-style">
-            <form>
-                <label>Name</label>
-                <input type="email" name="name">
-                <label>Email</label>
-                <input type="email" name="email">
-                <label>Password</label>
-                <input type="password" name="password">
-                <button>Sign up</button>
+            <form method="POST" action="/sign-up">
+                <label for="name">Name</label>
+                <input type="text" name="username" required>
+                <label for="email">Email</label>
+                <input type="email" name="email" required>
+                <label for="password">Password</label>
+                <input type="password" name="password" required>
+                <input type="submit" name="submit" value="Sign Up">
             </form>
         </div>      
     </div>
