@@ -1,11 +1,13 @@
 const express = require('express');
 const morgan = require('morgan');
+const path = require('path');
 const mongoose = require('mongoose');
 const user = require('./api/models/user');
 const bodyParser = require('body-parser');
 const userRouter = require('./api/routes/user');
 const taskRouter = require('./api/routes/task');
 require('dotenv').config();
+
 
 //creating th express app
 const app = express();
@@ -25,6 +27,8 @@ app.set('view engine', 'ejs')
 //middleware and static files
 app.use(morgan('dev'));
 app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
 app.use(express.urlencoded({ extended:false }));
 
 
@@ -42,7 +46,7 @@ app.get('/login',(req,res) => {
 });
 
 app.get('/sign-up',(req,res) => {
-    res.render('sign-up');
+    res.render('sign-up', {error: null});
 });
 
 app.get('/user-dashboard',(req,res) => {
@@ -53,9 +57,22 @@ app.get('/add-task',(req,res) => {
     res.render('add-task');
 });
 
+app.use('/error', (req, res) => {
+    if (res.error.path.length > 2) {
+        error = res.error;
+        res.render(error.path, { error })
+        return;
+    }
+})
+
 //404 page
-app.use((req,res) => {
-    res.status(404).render('404')
+app.use((req,res, next) => {
+    const error = {
+        message: '',
+        path: '404',
+        status: ''
+    }
+    next(error);
 });
 
 
