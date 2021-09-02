@@ -1,9 +1,15 @@
 const User = require('../models/user');
-const app = require('express')()
+const express = require('express');
+
 const path = require('path');
 
-app.set('views', '../../views');
-app.set('view engine', 'ejs');
+
+
+
+// app.set('views', '../../views');
+// app.set('view engine', 'ejs');
+// app.use(express.static(path.join(__dirname, "public")));
+
 
 exports.sign_up = (req, res, next) => {
 
@@ -47,6 +53,7 @@ exports.log_in = (req,res,next) => {
     const password = req.body.password;
 
 
+
     const user = new User({
         email : email,
         password : password
@@ -57,9 +64,8 @@ exports.log_in = (req,res,next) => {
             if (!user) {
                 res.redirect("/404");
             }
-            res.redirect("/user-dashboard");
-        })
+            //res.redirect("user-dashboard");
+            console.log(user);
+            res.render("user-dashboard",{user});
+        });
 }
-
-
-

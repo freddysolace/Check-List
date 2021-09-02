@@ -2,10 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const mongoose = require('mongoose');
-const user = require('./api/models/user');
-const bodyParser = require('body-parser');
-const userRouter = require('./api/routes/user');
-const taskRouter = require('./api/routes/task');
+const userRouter = require('./routes/user');
+const taskRouter = require('./routes/task');
 require('dotenv').config();
 
 
@@ -33,8 +31,8 @@ app.use(express.urlencoded({ extended:false }));
 
 
 // Route Middlewares
-app.use('/api/user',userRouter)
-    .use('/api/task',taskRouter);
+app.use('/user',userRouter)
+    .use('/task',taskRouter);
 
 
 app.get('/',(req,res) => {

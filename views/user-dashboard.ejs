@@ -38,7 +38,9 @@
     <div id="main-content">
         <div class="user-info" style="display: flex; justify-content: space-between;">
             <div>
-                <h2>Hey</h2>
+                <% if (user) {%>
+                    <h2>Hey <%= user.username %></h2>
+                <% } %>
                 <p>Here are the tasks to complete for today</p>
             </div>
             <div>
