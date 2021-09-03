@@ -38,13 +38,14 @@
     <div id="main-content">
         <div class="user-info" style="display: flex; justify-content: space-between;">
             <div>
-                <% if (user) {%>
-                    <h2>Hey <%= user.username %></h2>
-                <% } %>
+                <%user_info.forEach(user => {%>
+                    <h2>Hey <%= user.username %> </h2>
+                <% }) %>
+               
                 <p>Here are the tasks to complete for today</p>
             </div>
             <div>
-                <a href="./add-task">
+                <a href="/add-task">
                     <button class="add-task">Add task</button>
                 </a>
             </div>

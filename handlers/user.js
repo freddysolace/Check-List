@@ -1,14 +1,6 @@
 const User = require('../models/user');
 const express = require('express');
 
-const path = require('path');
-
-
-
-
-// app.set('views', '../../views');
-// app.set('view engine', 'ejs');
-// app.use(express.static(path.join(__dirname, "public")));
 
 
 exports.sign_up = (req, res, next) => {
@@ -59,13 +51,19 @@ exports.log_in = (req,res,next) => {
         password : password
     });
 
-    User.find({email: email,password: password}).exec()
-        .then(user => {
-            if (!user) {
-                res.redirect("/404");
-            }
-            //res.redirect("user-dashboard");
-            console.log(user);
-            res.render("user-dashboard",{user});
-        });
+    User.find({email: email,password: password}, function(err,user){
+        
+        res.render("user-dashboard",{user_info: user});
+    })
+        // .then(user => {
+        //     // if (!user) {
+        //     //     res.redirect("/404");
+        //     // }
+        //     // const user_name = user.username
+        //     console.log(user);
+        //     res.render("user-dashboard",{user_info: user});
+        // }).catch(err => {
+        //     console.log(err);
+        // })
+            
 }

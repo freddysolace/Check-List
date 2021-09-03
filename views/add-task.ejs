@@ -43,13 +43,13 @@
         </div>
 
         <div class="flex">
-            <form action="#">
-                <input type="text" placeholder="Title">
-                <input type="date">
+            <form method="POST" action="/task/create-task">
+                <input type="text" placeholder="Title" name="title" >
+                <input type="date" name="date">
 
                 <div class="flex-time">
-                    <input type="time">
-                    <input type="time">
+                    <input type="time" name="time1">
+                    <input type="time" name="time2">
                 </div>
                 <input type="submit" value="Save task">
             </form>

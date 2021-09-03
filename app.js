@@ -44,7 +44,7 @@ app.get('/login',(req,res) => {
 });
 
 app.get('/sign-up',(req,res) => {
-    res.render('sign-up', {error: null});
+    res.render('sign-up');
 });
 
 app.get('/user-dashboard',(req,res) => {
@@ -54,6 +54,10 @@ app.get('/user-dashboard',(req,res) => {
 app.get('/add-task',(req,res) => {
     res.render('add-task');
 });
+
+app.get('/user/add-task',(req,res) => {
+    res.redirect('/add-task');
+})
 
 app.use('/error', (req, res) => {
     if (res.error.path.length > 2) {
