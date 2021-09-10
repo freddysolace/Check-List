@@ -8,14 +8,13 @@ const taskSchema = new Schema({
     },
     date: {
         type: Date,
-        unique: true,
         required: [true,'date is required']
     },
-    time: {
+    time1: {
         type: String,
         required: [true, 'time is required']
     },
-    time: {
+    time2: {
         type: String,
         required: [true, 'time is required']
     }

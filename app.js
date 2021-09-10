@@ -4,11 +4,14 @@ const path = require('path');
 const mongoose = require('mongoose');
 const userRouter = require('./routes/user');
 const taskRouter = require('./routes/task');
+const contactRouter = require('./routes/contact');
+const nodemailer = require("nodemailer");
 require('dotenv').config();
 
 
 //creating th express app
 const app = express();
+
 
 //connect to mongodb
 const dbURI = process.env.DB_URL;
@@ -32,7 +35,8 @@ app.use(express.urlencoded({ extended:false }));
 
 // Route Middlewares
 app.use('/user',userRouter)
-    .use('/task',taskRouter);
+    .use('/task',taskRouter)
+    .use('/contact',contactRouter)
 
 
 app.get('/',(req,res) => {

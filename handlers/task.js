@@ -27,8 +27,7 @@ exports.create_task = (req,res,next) => {
             console.log(err);
         } else {
             console.log(savedTask);
-            // res.render('/user-dashboard', {
-            //     tasklist : task
+            res.render('/user/user-dashboard', {tasklist : task});
         }
     });
 }

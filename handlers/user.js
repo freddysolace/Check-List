@@ -1,6 +1,11 @@
 const User = require('../models/user');
+const Task = require('../models/task');
 const express = require('express');
+const jwt = require('jsonwebtoken');
 
+
+//jwt secret
+const JWT_SECRET = 'gjdsjhfdhieidjoejfo1928u39839738922hkfhfhihihdehhhduhihu373y8u93e9f8h3h93uefhfuo'
 
 
 exports.sign_up = (req, res, next) => {
@@ -20,6 +25,7 @@ exports.sign_up = (req, res, next) => {
 //         })
     
     const username = req.body.username;
+    const userID = req.body.userID;
     const email = req.body.email;
     const password = req.body.password;
     
@@ -51,9 +57,21 @@ exports.log_in = (req,res,next) => {
         password : password
     });
 
+
     User.find({email: email,password: password}, function(err,user){
-        
-        res.render("user-dashboard",{user_info: user});
+
+        const token = jwt.sign (
+            {
+                password: password,
+                username: username
+            },
+            JWT_SECRET
+        )
+
+
+        console.log(user,token)
+        res.render("user-dashboard",{user_info: user,data: token});
+       
     })
         // .then(user => {
         //     // if (!user) {
