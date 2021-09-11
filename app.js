@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const userRouter = require('./routes/user');
 const taskRouter = require('./routes/task');
 const contactRouter = require('./routes/contact');
+const session = require('express-session');
 const nodemailer = require("nodemailer");
 require('dotenv').config();
 
@@ -33,6 +34,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended:false }));
 
 
+
+app.use(session({
+    secret:'secret',
+    resave: false,
+    saveUninitialized:true
+}))
+
 // Route Middlewares
 app.use('/user',userRouter)
     .use('/task',taskRouter)
@@ -52,7 +60,12 @@ app.get('/sign-up',(req,res) => {
 });
 
 app.get('/user-dashboard',(req,res) => {
-    res.render('user-dashboard');
+    console.log(req.session);
+    if(req.session.user){
+        res.render('user-dashboard', {user: req.session.user});
+    }else{
+        res.redirect('/login')
+    }
 });
 
 app.get('/add-task',(req,res) => {
@@ -69,7 +82,10 @@ app.use('/error', (req, res) => {
         res.render(error.path, { error })
         return;
     }
-})
+});
+
+
+
 
 //404 page
 app.use((req,res, next) => {

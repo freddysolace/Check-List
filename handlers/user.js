@@ -1,5 +1,4 @@
 const User = require('../models/user');
-const Task = require('../models/task');
 const express = require('express');
 const jwt = require('jsonwebtoken');
 
@@ -60,17 +59,16 @@ exports.log_in = (req,res,next) => {
 
     User.find({email: email,password: password}, function(err,user){
 
-        const token = jwt.sign (
-            {
-                password: password,
-                username: username
-            },
-            JWT_SECRET
-        )
+        // const token = jwt.sign (
+        //     {
+        //         password: password,
+        //         username: username
+        //     },
+        //     JWT_SECRET
+        // )
 
-
-        console.log(user,token)
-        res.render("user-dashboard",{user_info: user,data: token});
+        req.session.user = user[0];
+        res.redirect("/user-dashboard");
        
     })
         // .then(user => {
